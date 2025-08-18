@@ -1,0 +1,54 @@
+{
+  "name": "hono-backend-starter",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "NODE_ENV=development bun run --hot src/index.ts",
+    "start": "NODE_ENV=production bun run src/index.ts",
+    "test": "NODE_ENV=test bun run src/index.ts",
+    "deploy": "./scripts/deploy.sh",
+    "deploy:server": "./scripts/server-deploy.sh",
+    "db:clean": "drizzle-kit drop",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:studio": "drizzle-kit studio",
+    "db:seed": "bun run scripts/seed.ts",
+    "prepare": "husky",
+    "lint": "eslint . --ext .ts,.js",
+    "lint:fix": "eslint . --ext .ts,.js --fix",
+    "commit": "git-cz",
+    "commit:lint": "commitlint --edit"
+  },
+  "dependencies": {
+    "@hono/zod-validator": "^0.7.2",
+    "argon2": "^0.43.1",
+    "croner": "^9.1.0",
+    "drizzle-orm": "^0.44.4",
+    "drizzle-zod": "^0.8.2",
+    "hono": "^4.8.12",
+    "hono-rate-limiter": "^0.4.2",
+    "pg": "^8.16.3",
+    "pino": "^9.7.0",
+    "stoker": "^2.0.1",
+    "zod": "^4.0.14"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^5.1.0",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@types/bun": "latest",
+    "@types/pg": "^8.15.5",
+    "commitizen": "^4.3.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "drizzle-kit": "^0.31.4",
+    "eslint": "^9.32.0",
+    "eslint-plugin-format": "^1.0.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.4",
+    "tsx": "^4.20.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  }
+}

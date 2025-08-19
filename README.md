@@ -32,7 +32,24 @@ cp env.example .env
 # 编辑 .env 文件，配置数据库连接等信息
 ```
 
-4. 启动开发服务器
+4. 启动 PostgreSQL 数据库
+
+```bash
+# 使用 Docker Compose 启动 PostgreSQL
+docker-compose up postgres -d
+```
+
+5. 初始化数据库
+
+```bash
+# 执行数据库迁移，创建表结构
+bun run db:migrate
+
+# 可选：填充测试数据
+bun run db:seed
+```
+
+6. 启动开发服务器
 
 ```bash
 bun run dev

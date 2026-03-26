@@ -6,9 +6,9 @@ import z from 'zod'
 import { db } from '../../db'
 import { users } from '../../db/schema'
 import env from '../../env'
-import { createRouter } from '../../lib/create-app'
+import { createRouteHandler } from '../../lib/create-app'
 
-const router = createRouter()
+const router = createRouteHandler()
 
 // 登录schema
 const loginSchema = z.object({

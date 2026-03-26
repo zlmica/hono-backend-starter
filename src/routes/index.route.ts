@@ -1,6 +1,6 @@
-import { createRouter } from '../lib/create-app'
+import { createRouteHandler } from '../lib/create-app'
 
-const router = createRouter()
+const router = createRouteHandler()
 
 router.get('/', (c) => {
   return c.json({

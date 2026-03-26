@@ -7,9 +7,9 @@ import { userInsertSchema, users, userUpdateSchema, userUpdateSelfSchema } from 
 import { createRouter } from '../../lib/create-app'
 
 import { paginatedQuery, validatePaginationQuery } from '../../utils/pagination'
-import { getCurrentUserId, isAdmin } from '../../utils/user'
+import { createRouteHandler } from '../../lib/create-app'
 
-const router = createRouter()
+const router = createRouteHandler()
 
 // 用户列表查询
 router.get('/', async (c) => {

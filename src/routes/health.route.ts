@@ -2,9 +2,9 @@ import * as process from 'node:process'
 import pkg from '../../package.json'
 import { db } from '../db'
 import env from '../env'
-import { createRouter } from '../lib/create-app'
+import { createRouteHandler } from '../lib/create-app'
 
-const router = createRouter()
+const router = createRouteHandler()
 
 // 健康检查
 router.get('/', async (c) => {

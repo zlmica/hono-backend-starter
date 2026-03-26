@@ -15,6 +15,11 @@ export function createRouter(limit: number = env.RATE_LIMIT_MAX) {
   return new Hono<AppBindings>().basePath(env.API_PREFIX).use(limiter(limit))
 }
 
+// 用于子路由的纯净路由器（无 basePath）
+export function createRouteHandler() {
+  return new Hono<AppBindings>()
+}
+
 export function createCron() {
   // 每五分钟执行一次
   return new Cron('0 */5 * * * *', () => {
